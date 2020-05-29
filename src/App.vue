@@ -5,8 +5,23 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
+    <p>Variable directa: {{$store.state.mensaje}}</p>
+    <p>Variable con getters: {{$store.getters.llamadoMensaje}}</p>
+    <p>Variable con getters: {{completo}}</p>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  computed: {
+    completo(){
+      return this.$store.getters.completo;
+    }
+  },
+}
+</script>
+
 
 <style lang="scss">
 #app {
